@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://c2opi6okcm1jd"]
+
+[ext_resource type="Script" uid="uid://dgubxe1y0d2w8" path="res://move.gd" id="1_6kapx"]
+[ext_resource type="Shader" uid="uid://btgyslb4skby0" path="res://white.gdshader" id="2_lcuul"]
+[ext_resource type="Texture2D" uid="uid://n7hcfpn10dsd" path="res://types/loving.png" id="3_lcuul"]
+
+[sub_resource type="SystemFont" id="SystemFont_lcuul"]
+font_names = PackedStringArray("Calibri")
+font_weight = 800
+
+[sub_resource type="FontVariation" id="FontVariation_7w0et"]
+base_font = SubResource("SystemFont_lcuul")
+
+[sub_resource type="LabelSettings" id="LabelSettings_7w0et"]
+font = SubResource("FontVariation_7w0et")
+font_size = 18
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7w0et"]
+shader = ExtResource("2_lcuul")
+
+[sub_resource type="LabelSettings" id="LabelSettings_lcuul"]
+font = SubResource("FontVariation_7w0et")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_7w0et"]
+font_names = PackedStringArray("Calibri")
+
+[sub_resource type="LabelSettings" id="LabelSettings_a3dyd"]
+font = SubResource("SystemFont_7w0et")
+font_size = 13
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_a3dyd"]
+font_names = PackedStringArray("Calibri")
+font_weight = 800
+
+[sub_resource type="LabelSettings" id="LabelSettings_fmmf5"]
+font = SubResource("SystemFont_a3dyd")
+font_size = 15
+font_color = Color(0, 0, 0, 1)
+
+[node name="Move" type="Control" unique_id=1237466346]
+custom_minimum_size = Vector2(690, 60)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -590.0
+offset_bottom = -660.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6kapx")
+
+[node name="Data" type="HBoxContainer" parent="." unique_id=2126758848]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 0
+
+[node name="Name" type="Label" parent="Data" unique_id=1489034948]
+custom_minimum_size = Vector2(120, 55)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Make Out"
+label_settings = SubResource("LabelSettings_7w0et")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Type" type="TextureRect" parent="Data" unique_id=1996594720]
+texture_filter = 4
+material = SubResource("ShaderMaterial_7w0et")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("3_lcuul")
+expand_mode = 4
+
+[node name="Power" type="Label" parent="Data" unique_id=959901952]
+custom_minimum_size = Vector2(60, 55)
+layout_mode = 2
+size_flags_vertical = 8
+text = "25"
+label_settings = SubResource("LabelSettings_lcuul")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Category" type="Label" parent="Data" unique_id=240057694]
+custom_minimum_size = Vector2(60, 55)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Bottom"
+label_settings = SubResource("LabelSettings_a3dyd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="Data" unique_id=994291837]
+custom_minimum_size = Vector2(325, 55)
+layout_mode = 2
+size_flags_vertical = 8
+text = "The user makes out with their target.
+Deals a critical hit if the target is in a <TRANCE>."
+label_settings = SubResource("LabelSettings_a3dyd")
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 3
+
+[node name="Priority" type="Label" parent="Data" unique_id=1064945504]
+custom_minimum_size = Vector2(70, 55)
+layout_mode = 2
+size_flags_vertical = 8
+text = "+3"
+label_settings = SubResource("LabelSettings_fmmf5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="ColorRect" parent="." unique_id=58779398]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.64705884, 0.77254903, 1)

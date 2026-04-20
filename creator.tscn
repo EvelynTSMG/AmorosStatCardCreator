@@ -1,0 +1,1862 @@
+[gd_scene format=3 uid="uid://carr470715ltd"]
+
+[ext_resource type="Script" uid="uid://dsqcw1fkrief8" path="res://creator.gd" id="1_ohlc5"]
+[ext_resource type="Texture2D" uid="uid://n7hcfpn10dsd" path="res://types/loving.png" id="2_oeey1"]
+[ext_resource type="Shader" uid="uid://cmwi816owakdn" path="res://round_topleft.gdshader" id="2_v0rtd"]
+[ext_resource type="Texture2D" uid="uid://br1diy26ptowh" path="res://types/rage.png" id="3_nen57"]
+[ext_resource type="PackedScene" uid="uid://c2opi6okcm1jd" path="res://move.tscn" id="5_nen57"]
+[ext_resource type="Shader" uid="uid://btgyslb4skby0" path="res://white.gdshader" id="6_1juwm"]
+[ext_resource type="Texture2D" uid="uid://dmeqotrr3moox" path="res://icons/bond.png" id="6_blgnk"]
+[ext_resource type="Texture2D" uid="uid://bux0hrd675mox" path="res://badges/pity.png" id="8_obypo"]
+[ext_resource type="Texture2D" uid="uid://8x05vn0ovsnk" path="res://icons/exp.png" id="8_p3aol"]
+[ext_resource type="Shader" uid="uid://p3cfrg8kxgdr" path="res://black.gdshader" id="9_i16x2"]
+[ext_resource type="Texture2D" uid="uid://c4s8m1ygevdah" path="res://badges/2nd.png" id="10_m5ppd"]
+[ext_resource type="Texture2D" uid="uid://bcxpadwoahfu" path="res://badge_icons/pity.png" id="10_tqj5i"]
+[ext_resource type="Texture2D" uid="uid://b4rbkxsj1bvm" path="res://badges/3rd.png" id="11_tqj5i"]
+[ext_resource type="Texture2D" uid="uid://dibhp7qkw61c0" path="res://badges/4th.png" id="12_52kf8"]
+[ext_resource type="Texture2D" uid="uid://cc0g4dsycdpuu" path="res://badges/5th.png" id="13_0gva5"]
+[ext_resource type="Texture2D" uid="uid://cofu4jfjda84h" path="res://badges/6th.png" id="14_a7820"]
+[ext_resource type="Texture2D" uid="uid://ketiwrnu0bvo" path="res://badges/7th.png" id="15_rwmvy"]
+[ext_resource type="Texture2D" uid="uid://rwrxigqm1yke" path="res://badge_icons/8th.png" id="16_aym1o"]
+[ext_resource type="Texture2D" uid="uid://cw5elos4hlum1" path="res://badge_icons/2nd.png" id="18_cj4g6"]
+[ext_resource type="Texture2D" uid="uid://husuxnee1lri" path="res://badge_icons/3rd.png" id="19_gx2f5"]
+[ext_resource type="Texture2D" uid="uid://bn8jumhkehmbr" path="res://badge_icons/4th.png" id="20_dx200"]
+[ext_resource type="Texture2D" uid="uid://drqwvkv0k5efi" path="res://badge_icons/5th.png" id="21_asehi"]
+[ext_resource type="Texture2D" uid="uid://dxi5dn7esgcjh" path="res://badge_icons/6th.png" id="22_vetho"]
+[ext_resource type="Texture2D" uid="uid://cdool4rmbrn85" path="res://badge_icons/7th.png" id="23_06yux"]
+[ext_resource type="Script" uid="uid://bqnd4rkvgqjbq" path="res://edit_ui/text.gd" id="25_gx2f5"]
+[ext_resource type="Script" uid="uid://cpe0m4otkuwgh" path="res://edit_ui/dropdown.gd" id="26_dx200"]
+[ext_resource type="Script" uid="uid://c8r12t0wmdl5x" path="res://edit_ui/colors.gd" id="27_asehi"]
+[ext_resource type="Script" uid="uid://bjtnkem2gijl" path="res://edit_ui/toggle.gd" id="28_vetho"]
+[ext_resource type="Script" uid="uid://3p8ije88312x" path="res://edit_ui/move_editor.gd" id="29_klx58"]
+
+[sub_resource type="SystemFont" id="SystemFont_1juwm"]
+font_names = PackedStringArray("Calibri")
+font_weight = 800
+subpixel_positioning = 0
+
+[sub_resource type="FontVariation" id="FontVariation_p3aol"]
+base_font = SubResource("SystemFont_1juwm")
+spacing_glyph = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_lvyc2"]
+font = SubResource("FontVariation_p3aol")
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_v0rtd"]
+font_names = PackedStringArray("Calibri")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_xu1mm"]
+font = SubResource("SystemFont_v0rtd")
+font_size = 13
+font_color = Color(0.44, 0.44, 0.44, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_xu1mm"]
+font_names = PackedStringArray("Calibri")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_oeey1"]
+font = SubResource("SystemFont_xu1mm")
+font_size = 15
+font_color = Color(0.439216, 0.439216, 0.439216, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_nen57"]
+font_names = PackedStringArray("Calibri")
+font_weight = 800
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_blgnk"]
+font = SubResource("SystemFont_nen57")
+font_size = 15
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_blgnk"]
+font_names = PackedStringArray("Calibri")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1juwm"]
+font = SubResource("SystemFont_blgnk")
+font_color = Color(1, 0.980392, 0.921569, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_ohlc5"]
+font_names = PackedStringArray("Calibri")
+font_weight = 800
+subpixel_positioning = 0
+
+[sub_resource type="FontVariation" id="FontVariation_v0rtd"]
+base_font = SubResource("SystemFont_ohlc5")
+spacing_glyph = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_v0rtd"]
+font = SubResource("FontVariation_v0rtd")
+font_size = 28
+font_color = Color(1, 0.980392, 0.921569, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xu1mm"]
+shader = ExtResource("2_v0rtd")
+
+[sub_resource type="SystemFont" id="SystemFont_p3aol"]
+font_names = PackedStringArray("Calibri")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_obypo"]
+font = SubResource("SystemFont_p3aol")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1juwm"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lvyc2"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_obypo"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i16x2"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b5x0k"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p3aol"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cj4g6"]
+shader = ExtResource("9_i16x2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aym1o"]
+shader = ExtResource("9_i16x2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gx2f5"]
+shader = ExtResource("9_i16x2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dx200"]
+shader = ExtResource("9_i16x2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_asehi"]
+shader = ExtResource("9_i16x2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vetho"]
+shader = ExtResource("9_i16x2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_06yux"]
+shader = ExtResource("9_i16x2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_klx58"]
+shader = ExtResource("9_i16x2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vm2n7"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v15fp"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qr3dl"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0yq6s"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m5ppd"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tqj5i"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_52kf8"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0gva5"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a7820"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rwmvy"]
+shader = ExtResource("6_1juwm")
+
+[sub_resource type="SystemFont" id="SystemFont_klx58"]
+font_names = PackedStringArray("Calibri")
+font_weight = 800
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_w81gy"]
+font = SubResource("SystemFont_klx58")
+font_size = 22
+
+[sub_resource type="SystemFont" id="SystemFont_w81gy"]
+font_names = PackedStringArray("Calibri")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_eyjls"]
+font_names = PackedStringArray("Calibri")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_klx58"]
+font = SubResource("SystemFont_klx58")
+font_size = 20
+
+[sub_resource type="SystemFont" id="SystemFont_06yux"]
+font_names = PackedStringArray("Calibri")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_eyjls"]
+font = SubResource("SystemFont_06yux")
+
+[sub_resource type="SystemFont" id="SystemFont_npp3d"]
+font_names = PackedStringArray("Calibri")
+subpixel_positioning = 0
+
+[node name="Creator" type="Control" unique_id=1292800916]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ohlc5")
+color_set = 0
+
+[node name="Card" type="Control" parent="." unique_id=635832538]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = -30.0
+offset_right = 510.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DataPanel" type="Control" parent="Card" unique_id=1013325350]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 330.0
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="Card/DataPanel" unique_id=348229322]
+z_index = 3
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 37.0
+grow_horizontal = 2
+text = "Elliot"
+label_settings = SubResource("LabelSettings_lvyc2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DetailsPanel" type="Control" parent="Card/DataPanel" unique_id=469024404]
+z_index = 2
+anchors_preset = 0
+offset_top = 37.0
+offset_right = 330.0
+offset_bottom = 57.0
+grow_horizontal = 2
+
+[node name="Pronouns" type="Label" parent="Card/DataPanel/DetailsPanel" unique_id=766255875]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.225
+anchor_top = 0.5
+anchor_right = 0.24
+anchor_bottom = 0.5
+offset_top = -6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "He/Him"
+label_settings = SubResource("LabelSettings_xu1mm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Genitals" type="Label" parent="Card/DataPanel/DetailsPanel" unique_id=1013747737]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -6.0
+offset_right = 12.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Penis"
+label_settings = SubResource("LabelSettings_xu1mm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Species" type="Label" parent="Card/DataPanel/DetailsPanel" unique_id=1826193086]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.773
+anchor_top = 0.5
+anchor_right = 0.773
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -6.0
+offset_right = 12.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Human"
+label_settings = SubResource("LabelSettings_xu1mm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Portrait" type="TextureRect" parent="Card/DataPanel" unique_id=1677535283]
+z_index = 1
+layout_mode = 0
+offset_top = 60.0
+offset_right = 180.0
+offset_bottom = 240.0
+expand_mode = 3
+
+[node name="StatList" type="VBoxContainer" parent="Card/DataPanel" unique_id=1003766676]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 60.0
+offset_right = 330.0
+offset_bottom = 240.0
+theme_override_constants/separation = 0
+
+[node name="StaminaStat" type="Control" parent="Card/DataPanel/StatList" unique_id=1663992320]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Card/DataPanel/StatList/StaminaStat" unique_id=1710258262]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -10.5
+offset_right = 13.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Stamina:"
+label_settings = SubResource("LabelSettings_oeey1")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Card/DataPanel/StatList/StaminaStat" unique_id=1314372021]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "21"
+label_settings = SubResource("LabelSettings_blgnk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="ColorRect" parent="Card/DataPanel/StatList/StaminaStat" unique_id=2125654445]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.776471, 0.952941, 0.737255, 1)
+
+[node name="TopAtkStat" type="Control" parent="Card/DataPanel/StatList" unique_id=1957979481]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Card/DataPanel/StatList/TopAtkStat" unique_id=1753139996]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -10.5
+offset_right = 13.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Top Atk:"
+label_settings = SubResource("LabelSettings_oeey1")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Card/DataPanel/StatList/TopAtkStat" unique_id=1410886532]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "30"
+label_settings = SubResource("LabelSettings_blgnk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="ColorRect" parent="Card/DataPanel/StatList/TopAtkStat" unique_id=2016540651]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.980392, 0.921569, 1)
+
+[node name="BotAtkStat" type="Control" parent="Card/DataPanel/StatList" unique_id=491886940]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Card/DataPanel/StatList/BotAtkStat" unique_id=424809759]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -10.5
+offset_right = 13.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bot Atk:"
+label_settings = SubResource("LabelSettings_oeey1")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Card/DataPanel/StatList/BotAtkStat" unique_id=436568739]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "26"
+label_settings = SubResource("LabelSettings_blgnk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="ColorRect" parent="Card/DataPanel/StatList/BotAtkStat" unique_id=527051277]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.776471, 0.952941, 0.737255, 1)
+
+[node name="TopDefStat" type="Control" parent="Card/DataPanel/StatList" unique_id=2076298742]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Card/DataPanel/StatList/TopDefStat" unique_id=1194304237]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -10.5
+offset_right = 13.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Top Def:"
+label_settings = SubResource("LabelSettings_oeey1")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Card/DataPanel/StatList/TopDefStat" unique_id=228483699]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "31"
+label_settings = SubResource("LabelSettings_blgnk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="ColorRect" parent="Card/DataPanel/StatList/TopDefStat" unique_id=1003372489]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.980392, 0.921569, 1)
+
+[node name="BotDefStat" type="Control" parent="Card/DataPanel/StatList" unique_id=353888432]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Card/DataPanel/StatList/BotDefStat" unique_id=238637227]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -10.5
+offset_right = 13.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bot Def:"
+label_settings = SubResource("LabelSettings_oeey1")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Card/DataPanel/StatList/BotDefStat" unique_id=1433985373]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "38"
+label_settings = SubResource("LabelSettings_blgnk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="ColorRect" parent="Card/DataPanel/StatList/BotDefStat" unique_id=1120335066]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.776471, 0.952941, 0.737255, 1)
+
+[node name="HorninessStat" type="Control" parent="Card/DataPanel/StatList" unique_id=1479205002]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Card/DataPanel/StatList/HorninessStat" unique_id=1598091614]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -10.5
+offset_right = 13.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Horniness:"
+label_settings = SubResource("LabelSettings_oeey1")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Card/DataPanel/StatList/HorninessStat" unique_id=1442569439]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "29"
+label_settings = SubResource("LabelSettings_blgnk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="ColorRect" parent="Card/DataPanel/StatList/HorninessStat" unique_id=187122134]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.980392, 0.921569, 1)
+
+[node name="BottomDataPanel" type="Control" parent="Card/DataPanel" unique_id=1113886905]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -90.0
+offset_right = 330.0
+grow_vertical = 0
+
+[node name="Items" type="HBoxContainer" parent="Card/DataPanel/BottomDataPanel" unique_id=1137959863]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 0
+
+[node name="TypePanel" type="HBoxContainer" parent="Card/DataPanel/BottomDataPanel/Items" unique_id=1632801058]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Type1" type="TextureRect" parent="Card/DataPanel/BottomDataPanel/Items/TypePanel" unique_id=1083332841]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+texture = ExtResource("2_oeey1")
+expand_mode = 2
+
+[node name="Type2" type="TextureRect" parent="Card/DataPanel/BottomDataPanel/Items/TypePanel" unique_id=1536942938]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+texture = ExtResource("3_nen57")
+expand_mode = 2
+
+[node name="CurrentHealthPanel" type="VBoxContainer" parent="Card/DataPanel/BottomDataPanel/Items" unique_id=118412857]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Spacer" type="Control" parent="Card/DataPanel/BottomDataPanel/Items/CurrentHealthPanel" unique_id=1634336793]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="Header" type="Label" parent="Card/DataPanel/BottomDataPanel/Items/CurrentHealthPanel" unique_id=1051790498]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Current Health:"
+label_settings = SubResource("LabelSettings_1juwm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="Card/DataPanel/BottomDataPanel/Items/CurrentHealthPanel" unique_id=1615382188]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="Health" type="Label" parent="Card/DataPanel/BottomDataPanel/Items/CurrentHealthPanel" unique_id=834709243]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+size_flags_vertical = 3
+text = "42 / 42"
+label_settings = SubResource("LabelSettings_v0rtd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="ColorRect" parent="Card/DataPanel/BottomDataPanel" unique_id=1904546659]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.34902, 0.34902, 0.34902, 1)
+
+[node name="HeldBadges" type="VBoxContainer" parent="Card/DataPanel" unique_id=841667669]
+z_index = 10
+layout_mode = 0
+offset_left = -20.0
+offset_top = 33.0
+offset_right = 20.0
+offset_bottom = 73.0
+theme_override_constants/separation = -20
+
+[node name="Pity" type="TextureRect" parent="Card/DataPanel/HeldBadges" unique_id=1900136332]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("8_obypo")
+expand_mode = 2
+
+[node name="Badge2" type="TextureRect" parent="Card/DataPanel/HeldBadges" unique_id=1030358947]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("10_m5ppd")
+expand_mode = 2
+
+[node name="Badge3" type="TextureRect" parent="Card/DataPanel/HeldBadges" unique_id=632989700]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("11_tqj5i")
+expand_mode = 2
+
+[node name="Badge4" type="TextureRect" parent="Card/DataPanel/HeldBadges" unique_id=1896925040]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("12_52kf8")
+expand_mode = 2
+
+[node name="Badge5" type="TextureRect" parent="Card/DataPanel/HeldBadges" unique_id=577873012]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("13_0gva5")
+expand_mode = 2
+
+[node name="Badge6" type="TextureRect" parent="Card/DataPanel/HeldBadges" unique_id=1089458269]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("14_a7820")
+expand_mode = 2
+
+[node name="Badge7" type="TextureRect" parent="Card/DataPanel/HeldBadges" unique_id=1606857401]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("15_rwmvy")
+expand_mode = 2
+
+[node name="Badge8" type="TextureRect" parent="Card/DataPanel/HeldBadges" unique_id=746955388]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("16_aym1o")
+expand_mode = 2
+
+[node name="Background" type="ColorRect" parent="Card" unique_id=1027342589]
+z_index = -500
+material = SubResource("ShaderMaterial_xu1mm")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.980392, 0.921569, 1)
+
+[node name="RightPanel" type="VBoxContainer" parent="Card" unique_id=156112140]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -690.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="MoveSetHeader" type="HBoxContainer" parent="Card/RightPanel" unique_id=296914391]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MoveNameHeader" type="Label" parent="Card/RightPanel/MoveSetHeader" unique_id=1143853090]
+custom_minimum_size = Vector2(120, 25)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Move Name"
+label_settings = SubResource("LabelSettings_xu1mm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoveTypeHeader" type="Label" parent="Card/RightPanel/MoveSetHeader" unique_id=1626958376]
+custom_minimum_size = Vector2(60, 25)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Type"
+label_settings = SubResource("LabelSettings_xu1mm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MovePowerHeader" type="Label" parent="Card/RightPanel/MoveSetHeader" unique_id=1782038927]
+custom_minimum_size = Vector2(60, 25)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Power"
+label_settings = SubResource("LabelSettings_xu1mm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoveCategoryHeader" type="Label" parent="Card/RightPanel/MoveSetHeader" unique_id=1021527691]
+custom_minimum_size = Vector2(60, 25)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Category"
+label_settings = SubResource("LabelSettings_xu1mm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoveDescriptionHeader" type="Label" parent="Card/RightPanel/MoveSetHeader" unique_id=1165520905]
+custom_minimum_size = Vector2(327, 25)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Description"
+label_settings = SubResource("LabelSettings_xu1mm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MovePriorityHeader" type="Label" parent="Card/RightPanel/MoveSetHeader" unique_id=1981626072]
+custom_minimum_size = Vector2(63, 25)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Priority"
+label_settings = SubResource("LabelSettings_xu1mm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoveSet" type="VBoxContainer" parent="Card/RightPanel" unique_id=2132030260]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Move1" parent="Card/RightPanel/MoveSet" unique_id=487570636 instance=ExtResource("5_nen57")]
+layout_mode = 2
+power = 0
+
+[node name="Move2" parent="Card/RightPanel/MoveSet" unique_id=1317238228 instance=ExtResource("5_nen57")]
+layout_mode = 2
+move_name = "Make Out"
+type = 2
+power = 25
+category = 1
+description = "The user makes out with their target.
+Deals a critical hit if the target is in a <TRANCE>."
+
+[node name="Move3" parent="Card/RightPanel/MoveSet" unique_id=2109007581 instance=ExtResource("5_nen57")]
+layout_mode = 2
+move_name = "Tender Touch"
+type = 2
+power = 15
+description = "The user slides their hands up and down the target's body
+lovingly. Raises the user's Top Attack."
+priority = -1
+
+[node name="Move4" parent="Card/RightPanel/MoveSet" unique_id=202453770 instance=ExtResource("5_nen57")]
+layout_mode = 2
+move_name = "Tease"
+type = 8
+power = 0
+category = 2
+description = "The user makes fun of the target. Inflicts <EMBARRASSED>."
+
+[node name="BondExpData" type="Control" parent="Card/RightPanel" unique_id=1200952407]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="BondData" type="HBoxContainer" parent="Card/RightPanel/BondExpData" unique_id=812809362]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="Label" parent="Card/RightPanel/BondExpData/BondData" unique_id=33787604]
+custom_minimum_size = Vector2(120, 55)
+layout_mode = 2
+size_flags_vertical = 8
+text = "BOND:"
+label_settings = SubResource("LabelSettings_obypo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pips" type="HBoxContainer" parent="Card/RightPanel/BondExpData/BondData" unique_id=1002493965]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="Bond1" type="TextureRect" parent="Card/RightPanel/BondExpData/BondData/Pips" unique_id=1904143316]
+material = SubResource("ShaderMaterial_1juwm")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("6_blgnk")
+expand_mode = 4
+
+[node name="Bond2" type="TextureRect" parent="Card/RightPanel/BondExpData/BondData/Pips" unique_id=913133676]
+material = SubResource("ShaderMaterial_lvyc2")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("6_blgnk")
+expand_mode = 4
+
+[node name="Bond3" type="TextureRect" parent="Card/RightPanel/BondExpData/BondData/Pips" unique_id=314838977]
+material = SubResource("ShaderMaterial_obypo")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("6_blgnk")
+expand_mode = 4
+
+[node name="Bond4" type="TextureRect" parent="Card/RightPanel/BondExpData/BondData/Pips" unique_id=993072746]
+material = SubResource("ShaderMaterial_i16x2")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("6_blgnk")
+expand_mode = 4
+
+[node name="Bond5" type="TextureRect" parent="Card/RightPanel/BondExpData/BondData/Pips" unique_id=535909546]
+material = SubResource("ShaderMaterial_b5x0k")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("6_blgnk")
+expand_mode = 4
+
+[node name="Bond6" type="TextureRect" parent="Card/RightPanel/BondExpData/BondData/Pips" unique_id=1736950463]
+material = SubResource("ShaderMaterial_p3aol")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("6_blgnk")
+expand_mode = 4
+
+[node name="BadgeData" type="HBoxContainer" parent="Card/RightPanel/BondExpData" unique_id=625933516]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Spacer" type="Control" parent="Card/RightPanel/BondExpData/BadgeData" unique_id=1445296694]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="Header" type="Label" parent="Card/RightPanel/BondExpData/BadgeData" unique_id=1074072498]
+custom_minimum_size = Vector2(80, 55)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Badges:"
+label_settings = SubResource("LabelSettings_obypo")
+vertical_alignment = 1
+
+[node name="Pips" type="HBoxContainer" parent="Card/RightPanel/BondExpData/BadgeData" unique_id=552097022]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="Pity" type="TextureRect" parent="Card/RightPanel/BondExpData/BadgeData/Pips" unique_id=938221768]
+material = SubResource("ShaderMaterial_cj4g6")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("10_tqj5i")
+expand_mode = 4
+
+[node name="Badge2" type="TextureRect" parent="Card/RightPanel/BondExpData/BadgeData/Pips" unique_id=1715606133]
+material = SubResource("ShaderMaterial_aym1o")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("18_cj4g6")
+expand_mode = 4
+
+[node name="Badge3" type="TextureRect" parent="Card/RightPanel/BondExpData/BadgeData/Pips" unique_id=507746156]
+material = SubResource("ShaderMaterial_gx2f5")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("19_gx2f5")
+expand_mode = 4
+
+[node name="Badge4" type="TextureRect" parent="Card/RightPanel/BondExpData/BadgeData/Pips" unique_id=1796508818]
+material = SubResource("ShaderMaterial_dx200")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("20_dx200")
+expand_mode = 4
+
+[node name="Badge5" type="TextureRect" parent="Card/RightPanel/BondExpData/BadgeData/Pips" unique_id=2105633400]
+material = SubResource("ShaderMaterial_asehi")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("21_asehi")
+expand_mode = 4
+
+[node name="Badge6" type="TextureRect" parent="Card/RightPanel/BondExpData/BadgeData/Pips" unique_id=663861349]
+material = SubResource("ShaderMaterial_vetho")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("22_vetho")
+expand_mode = 4
+
+[node name="Badge7" type="TextureRect" parent="Card/RightPanel/BondExpData/BadgeData/Pips" unique_id=838364945]
+material = SubResource("ShaderMaterial_06yux")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("23_06yux")
+expand_mode = 4
+
+[node name="Badge8" type="TextureRect" parent="Card/RightPanel/BondExpData/BadgeData/Pips" unique_id=1316686732]
+material = SubResource("ShaderMaterial_klx58")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("16_aym1o")
+expand_mode = 4
+
+[node name="ExpData" type="HBoxContainer" parent="Card/RightPanel/BondExpData" unique_id=1610592287]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 11
+
+[node name="Header" type="Label" parent="Card/RightPanel/BondExpData/ExpData" unique_id=155152638]
+custom_minimum_size = Vector2(60, 55)
+layout_mode = 2
+size_flags_vertical = 8
+text = "EXP:"
+label_settings = SubResource("LabelSettings_obypo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pips" type="HBoxContainer" parent="Card/RightPanel/BondExpData/ExpData" unique_id=371938217]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="Exp1" type="TextureRect" parent="Card/RightPanel/BondExpData/ExpData/Pips" unique_id=1554994903]
+material = SubResource("ShaderMaterial_vm2n7")
+custom_minimum_size = Vector2(38, 40)
+layout_mode = 2
+texture = ExtResource("8_p3aol")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Exp2" type="TextureRect" parent="Card/RightPanel/BondExpData/ExpData/Pips" unique_id=34911738]
+material = SubResource("ShaderMaterial_v15fp")
+custom_minimum_size = Vector2(38, 40)
+layout_mode = 2
+texture = ExtResource("8_p3aol")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Exp3" type="TextureRect" parent="Card/RightPanel/BondExpData/ExpData/Pips" unique_id=130927919]
+material = SubResource("ShaderMaterial_qr3dl")
+custom_minimum_size = Vector2(38, 40)
+layout_mode = 2
+texture = ExtResource("8_p3aol")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Exp4" type="TextureRect" parent="Card/RightPanel/BondExpData/ExpData/Pips" unique_id=1931847324]
+material = SubResource("ShaderMaterial_0yq6s")
+custom_minimum_size = Vector2(38, 40)
+layout_mode = 2
+texture = ExtResource("8_p3aol")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Exp5" type="TextureRect" parent="Card/RightPanel/BondExpData/ExpData/Pips" unique_id=804069571]
+material = SubResource("ShaderMaterial_m5ppd")
+custom_minimum_size = Vector2(38, 40)
+layout_mode = 2
+texture = ExtResource("8_p3aol")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Exp6" type="TextureRect" parent="Card/RightPanel/BondExpData/ExpData/Pips" unique_id=681855337]
+material = SubResource("ShaderMaterial_tqj5i")
+custom_minimum_size = Vector2(38, 40)
+layout_mode = 2
+texture = ExtResource("8_p3aol")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Exp7" type="TextureRect" parent="Card/RightPanel/BondExpData/ExpData/Pips" unique_id=1065194615]
+material = SubResource("ShaderMaterial_52kf8")
+custom_minimum_size = Vector2(38, 40)
+layout_mode = 2
+texture = ExtResource("8_p3aol")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Exp8" type="TextureRect" parent="Card/RightPanel/BondExpData/ExpData/Pips" unique_id=1668599068]
+material = SubResource("ShaderMaterial_0gva5")
+custom_minimum_size = Vector2(38, 40)
+layout_mode = 2
+texture = ExtResource("8_p3aol")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Exp9" type="TextureRect" parent="Card/RightPanel/BondExpData/ExpData/Pips" unique_id=1281916575]
+material = SubResource("ShaderMaterial_a7820")
+custom_minimum_size = Vector2(38, 40)
+layout_mode = 2
+texture = ExtResource("8_p3aol")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Exp10" type="TextureRect" parent="Card/RightPanel/BondExpData/ExpData/Pips" unique_id=1299950974]
+material = SubResource("ShaderMaterial_rwmvy")
+custom_minimum_size = Vector2(38, 40)
+layout_mode = 2
+texture = ExtResource("8_p3aol")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Background" type="ColorRect" parent="Card/RightPanel/BondExpData" unique_id=932679208]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.34902, 0.34902, 0.34902, 1)
+
+[node name="Background" type="ColorRect" parent="." unique_id=1099151600]
+z_index = -1000
+z_as_relative = false
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.556863, 0.929412, 0.552941, 1)
+
+[node name="ScreenshotView" type="SubViewport" parent="." unique_id=313612911]
+size = Vector2i(1080, 390)
+
+[node name="EditorUI" type="Panel" parent="." unique_id=2105361941]
+custom_minimum_size = Vector2(200, 270)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="EditorUI" unique_id=1556532430]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="EditorUI/ScrollContainer" unique_id=966286223]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="OptionPanels" type="HBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer" unique_id=906115371]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="BasicDetails" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=1106377576]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="Header" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails" unique_id=1730785751]
+layout_mode = 2
+text = "Basic details"
+label_settings = SubResource("LabelSettings_w81gy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails" unique_id=1875692134]
+custom_minimum_size = Vector2(160, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Character Name"
+script = ExtResource("25_gx2f5")
+value_connect = "character_name"
+
+[node name="CompanionType" type="OptionButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails" unique_id=534044969]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+script = ExtResource("26_dx200")
+value_connect = "companion_type"
+dropdowntype = 1
+
+[node name="Pronouns" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails" unique_id=651224828]
+custom_minimum_size = Vector2(160, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Pronouns"
+script = ExtResource("25_gx2f5")
+value_connect = "pronouns"
+
+[node name="Genitals" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails" unique_id=35687557]
+custom_minimum_size = Vector2(160, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Genitals"
+script = ExtResource("25_gx2f5")
+value_connect = "genitals"
+
+[node name="Species" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails" unique_id=619571225]
+custom_minimum_size = Vector2(160, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Species"
+script = ExtResource("25_gx2f5")
+value_connect = "species"
+
+[node name="UploadPortrait" type="Button" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails" unique_id=528217969]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+text = "Upload portrait"
+
+[node name="Types" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=362861688]
+visible = false
+layout_mode = 2
+
+[node name="Header" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Types" unique_id=136158155]
+layout_mode = 2
+text = "Types"
+label_settings = SubResource("LabelSettings_w81gy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AutoInfer" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Types" unique_id=230681105]
+layout_mode = 2
+button_pressed = true
+text = "Auto Infer Type"
+script = ExtResource("28_vetho")
+value_connect = "auto_infer_type"
+
+[node name="Type1" type="OptionButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Types" unique_id=988792757]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+script = ExtResource("26_dx200")
+value_connect = "type1"
+
+[node name="Type2" type="OptionButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Types" unique_id=1313562083]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+script = ExtResource("26_dx200")
+value_connect = "type2"
+
+[node name="Colors" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=624247687]
+visible = false
+layout_mode = 2
+
+[node name="Header" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Colors" unique_id=841554910]
+layout_mode = 2
+text = "Colors"
+label_settings = SubResource("LabelSettings_w81gy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorSet" type="OptionButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Colors" unique_id=1857452997]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+script = ExtResource("26_dx200")
+value_connect = "color_set"
+dropdowntype = 2
+
+[node name="ColorMain" type="ColorPickerButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Colors" unique_id=639868909]
+layout_mode = 2
+text = "Color1"
+script = ExtResource("27_asehi")
+value_connect = "color1"
+
+[node name="ColorLight" type="ColorPickerButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Colors" unique_id=1470769152]
+layout_mode = 2
+text = "Color2"
+script = ExtResource("27_asehi")
+value_connect = "color2"
+
+[node name="Stats" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=1200959654]
+visible = false
+layout_mode = 2
+
+[node name="Header" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats" unique_id=181713702]
+layout_mode = 2
+text = "Stats"
+label_settings = SubResource("LabelSettings_w81gy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsGrid" type="GridContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats" unique_id=1363532220]
+layout_mode = 2
+columns = 2
+
+[node name="CurrentHealth" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid" unique_id=1868442569]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+placeholder_text = "Current HP"
+script = ExtResource("25_gx2f5")
+value_connect = "current_health"
+is_numeric = true
+
+[node name="Stamina" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid" unique_id=1211054106]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+placeholder_text = "Stamina"
+script = ExtResource("25_gx2f5")
+value_connect = "stamina"
+is_numeric = true
+
+[node name="TopAtk" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid" unique_id=1681871139]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+placeholder_text = "Top Atk"
+script = ExtResource("25_gx2f5")
+value_connect = "top_atk"
+is_numeric = true
+
+[node name="BotAtk" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid" unique_id=1601519591]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+placeholder_text = "Bot Atk"
+script = ExtResource("25_gx2f5")
+value_connect = "bot_atk"
+is_numeric = true
+
+[node name="TopDef" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid" unique_id=853334906]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+placeholder_text = "Top Def"
+script = ExtResource("25_gx2f5")
+value_connect = "top_def"
+is_numeric = true
+
+[node name="BotDef" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid" unique_id=958416740]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+placeholder_text = "Bot Def"
+script = ExtResource("25_gx2f5")
+value_connect = "bot_def"
+is_numeric = true
+
+[node name="Horniness" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats" unique_id=977847769]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+placeholder_text = "Horniness"
+script = ExtResource("25_gx2f5")
+value_connect = "horniness"
+is_numeric = true
+
+[node name="MoveSet" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=687309699]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+
+[node name="Header" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet" unique_id=1809552559]
+layout_mode = 2
+text = "Move Set"
+label_settings = SubResource("LabelSettings_w81gy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoveList" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet" unique_id=28373360]
+layout_mode = 2
+
+[node name="Move1" type="MenuButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList" unique_id=945361311]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+text = "None"
+flat = false
+item_count = 1
+popup/item_0/text = "None"
+popup/item_0/id = 0
+
+[node name="Move2" type="MenuButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList" unique_id=1757156321]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+text = "None"
+flat = false
+item_count = 1
+popup/item_0/text = "None"
+popup/item_0/id = 0
+
+[node name="Move3" type="MenuButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList" unique_id=1899900589]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+text = "None"
+flat = false
+item_count = 1
+popup/item_0/text = "None"
+popup/item_0/id = 0
+
+[node name="Move4" type="MenuButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList" unique_id=1091218340]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+text = "None"
+flat = false
+item_count = 1
+popup/item_0/text = "None"
+popup/item_0/id = 0
+
+[node name="CustomMoveEditor" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=946310975]
+visible = false
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+script = ExtResource("29_klx58")
+
+[node name="Header" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=839029432]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Custom Move Editor"
+label_settings = SubResource("LabelSettings_w81gy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Columns" type="HBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=896349554]
+layout_mode = 2
+
+[node name="LeftColumn" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns" unique_id=2126168235]
+custom_minimum_size = Vector2(198, 0)
+layout_mode = 2
+
+[node name="Adder" type="HBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn" unique_id=123181157]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Id" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn/Adder" unique_id=431101591]
+custom_minimum_size = Vector2(164, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Move ID"
+
+[node name="AddButton" type="Button" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn/Adder" unique_id=1885235979]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "+"
+
+[node name="Remover" type="HBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn" unique_id=1289190999]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Dropdown" type="MenuButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn/Remover" unique_id=725935105]
+custom_minimum_size = Vector2(164, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+flat = false
+item_count = 1
+popup/item_0/text = "None"
+popup/item_0/id = 0
+
+[node name="RemoveButton" type="Button" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn/Remover" unique_id=963634606]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "-"
+
+[node name="Button" type="Button" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn" unique_id=203131907]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+text = "Save Custom Moves"
+
+[node name="RightColumn" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns" unique_id=408139238]
+custom_minimum_size = Vector2(198, 0)
+layout_mode = 2
+
+[node name="Type" type="OptionButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/RightColumn" unique_id=322863341]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+script = ExtResource("26_dx200")
+
+[node name="Category" type="OptionButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/RightColumn" unique_id=741311995]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 18
+script = ExtResource("26_dx200")
+dropdowntype = 3
+
+[node name="DamageStats" type="HBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/RightColumn" unique_id=637061356]
+layout_mode = 2
+
+[node name="Power" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/RightColumn/DamageStats" unique_id=1652732358]
+custom_minimum_size = Vector2(97, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+placeholder_text = "Power"
+script = ExtResource("25_gx2f5")
+is_numeric = true
+
+[node name="Priority" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/RightColumn/DamageStats" unique_id=1205207197]
+custom_minimum_size = Vector2(97, 30)
+layout_mode = 2
+text = "0"
+placeholder_text = "Priority"
+
+[node name="Name" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=1113470092]
+layout_mode = 2
+placeholder_text = "Move Name"
+
+[node name="Description" type="TextEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=1896015282]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+placeholder_text = "Description"
+
+[node name="EXPBond" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=1150157431]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond" unique_id=165221844]
+layout_mode = 2
+text = "Progress"
+label_settings = SubResource("LabelSettings_w81gy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Experience" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond" unique_id=206897179]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+placeholder_text = "Experience"
+script = ExtResource("25_gx2f5")
+value_connect = "experience"
+is_numeric = true
+
+[node name="LockedExperience" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond" unique_id=1441919336]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+placeholder_text = "Locked Experience"
+script = ExtResource("25_gx2f5")
+value_connect = "locked_experience"
+is_numeric = true
+
+[node name="Bond" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond" unique_id=712824250]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+placeholder_text = "Bond"
+script = ExtResource("25_gx2f5")
+value_connect = "bond"
+is_numeric = true
+
+[node name="BadgeOptions" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=132506558]
+layout_mode = 2
+
+[node name="BadgesAlwaysVisible" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions" unique_id=1147868680]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Show Locked Badges"
+alignment = 1
+script = ExtResource("28_vetho")
+value_connect = "badges_always_visible"
+
+[node name="BadgeLists" type="HBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions" unique_id=1487711545]
+layout_mode = 2
+
+[node name="Badges" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists" unique_id=462126793]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Header" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges" unique_id=361659809]
+layout_mode = 2
+text = "Badges"
+label_settings = SubResource("LabelSettings_klx58")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BadgeList" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges" unique_id=1549765421]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Badge1" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList" unique_id=1369691567]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Pity Badge"
+script = ExtResource("28_vetho")
+value_connect = "pity"
+
+[node name="Badge2" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList" unique_id=2043667396]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Badge 2"
+script = ExtResource("28_vetho")
+value_connect = "badge2"
+
+[node name="Badge3" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList" unique_id=2080906738]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Badge 3"
+script = ExtResource("28_vetho")
+value_connect = "badge3"
+
+[node name="Badge4" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList" unique_id=399862440]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Badge 4"
+script = ExtResource("28_vetho")
+value_connect = "badge4"
+
+[node name="Badge5" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList" unique_id=1117181397]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Badge 5"
+script = ExtResource("28_vetho")
+value_connect = "badge5"
+
+[node name="Badge6" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList" unique_id=604387863]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Badge 6"
+script = ExtResource("28_vetho")
+value_connect = "badge6"
+
+[node name="Badge7" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList" unique_id=1422347031]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Badge 7"
+script = ExtResource("28_vetho")
+value_connect = "badge7"
+
+[node name="Badge8" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList" unique_id=2087961034]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Badge 8"
+script = ExtResource("28_vetho")
+value_connect = "badge8"
+
+[node name="BadgesHeld" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists" unique_id=761917162]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Header" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld" unique_id=397536612]
+layout_mode = 2
+text = "Held Badges"
+label_settings = SubResource("LabelSettings_klx58")
+
+[node name="BadgeList" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld" unique_id=1726073357]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Badge1" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList" unique_id=1010802606]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Pity Badge"
+script = ExtResource("28_vetho")
+value_connect = "holding_pity"
+
+[node name="Badge2" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList" unique_id=1342383990]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Badge 2"
+script = ExtResource("28_vetho")
+value_connect = "holding_badge2"
+
+[node name="Badge3" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList" unique_id=1860788524]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Badge 3"
+script = ExtResource("28_vetho")
+value_connect = "holding_badge3"
+
+[node name="Badge4" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList" unique_id=43715189]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Badge 4"
+script = ExtResource("28_vetho")
+value_connect = "holding_badge4"
+
+[node name="Badge5" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList" unique_id=17915524]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Badge 5"
+script = ExtResource("28_vetho")
+value_connect = "holding_badge5"
+
+[node name="Badge6" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList" unique_id=1196680024]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Badge 6"
+script = ExtResource("28_vetho")
+value_connect = "holding_badge6"
+
+[node name="Badge7" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList" unique_id=1758574864]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Badge 7"
+script = ExtResource("28_vetho")
+value_connect = "holding_badge7"
+
+[node name="Badge8" type="CheckButton" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList" unique_id=1246209281]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_eyjls")
+theme_override_font_sizes/font_size = 18
+text = "Badge 8"
+script = ExtResource("28_vetho")
+value_connect = "holding_badge8"
+
+[node name="Finalize" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=302522749]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="Credits" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Finalize" unique_id=661341446]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Amoros Stat Card Creator
+by EvelynTSMG and Jtad"
+label_settings = SubResource("LabelSettings_eyjls")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SaveCard" type="Button" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Finalize" unique_id=973849453]
+custom_minimum_size = Vector2(180, 130)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_npp3d")
+theme_override_font_sizes/font_size = 24
+text = "Save Card"
+
+[node name="ExportImpot" type="HBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Finalize" unique_id=1583255166]
+layout_mode = 2
+
+[node name="ExportCard" type="Button" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Finalize/ExportImpot" unique_id=190499074]
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 20
+text = "Export Card"
+
+[node name="ImportCard" type="Button" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Finalize/ExportImpot" unique_id=1308025328]
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_w81gy")
+theme_override_font_sizes/font_size = 20
+text = "Import Card"
+
+[node name="PortraitFileDialog" type="FileDialog" parent="." unique_id=443540093]
+title = "Import Portrait"
+popup_window = true
+mode_overrides_title = false
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.png,*.jpg,*.jpeg;Image Files;image/png,image/jpeg", "*.*")
+
+[node name="SaveCardFileDialog" type="FileDialog" parent="." unique_id=844251325]
+title = "Save Card"
+popup_window = true
+mode_overrides_title = false
+access = 2
+filters = PackedStringArray("*.png")
+
+[node name="ImportCardFileDialog" type="FileDialog" parent="." unique_id=799969658]
+title = "Save Card"
+popup_window = true
+mode_overrides_title = false
+access = 2
+filters = PackedStringArray("*.json")
+
+[node name="ExportCardFileDialog" type="FileDialog" parent="." unique_id=396171936]
+title = "Save Card"
+popup_window = true
+mode_overrides_title = false
+access = 2
+filters = PackedStringArray("*.json")
+
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/Name" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/Name" method="_on_text_changed"]
+[connection signal="item_selected" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/CompanionType" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/CompanionType" method="_on_item_selected"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/Pronouns" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/Pronouns" method="_on_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/Genitals" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/Genitals" method="_on_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/Species" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/Species" method="_on_text_changed"]
+[connection signal="pressed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/UploadPortrait" to="." method="open_portrait_dialog"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Types/AutoInfer" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Types/AutoInfer" method="_on_toggled"]
+[connection signal="item_selected" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Types/Type1" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Types/Type1" method="_on_item_selected"]
+[connection signal="item_selected" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Types/Type2" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Types/Type2" method="_on_item_selected"]
+[connection signal="item_selected" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Colors/ColorSet" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Colors/ColorSet" method="_on_item_selected"]
+[connection signal="color_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Colors/ColorMain" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Colors/ColorMain" method="_on_color_changed"]
+[connection signal="color_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Colors/ColorLight" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Colors/ColorLight" method="_on_color_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/CurrentHealth" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/CurrentHealth" method="_on_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/Stamina" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/Stamina" method="_on_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/TopAtk" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/TopAtk" method="_on_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/BotAtk" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/BotAtk" method="_on_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/TopDef" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/TopDef" method="_on_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/BotDef" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/BotDef" method="_on_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/Horniness" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/Horniness" method="_on_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn/Adder/Id" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_on_name_text_changed"]
+[connection signal="item_selected" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/RightColumn/Type" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_on_type_item_selected"]
+[connection signal="item_selected" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/RightColumn/Category" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_on_category_item_selected"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/RightColumn/DamageStats/Power" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_on_power_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/RightColumn/DamageStats/Priority" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_on_priority_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Name" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_on_name_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Description" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_on_description_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond/Experience" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond/Experience" method="_on_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond/LockedExperience" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond/LockedExperience" method="_on_text_changed"]
+[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond/Bond" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond/Bond" method="_on_text_changed"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgesAlwaysVisible" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgesAlwaysVisible" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge1" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge1" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge2" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge2" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge3" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge3" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge4" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge4" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge5" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge5" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge6" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge6" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge7" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge7" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge8" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/Badges/BadgeList/Badge8" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge1" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge1" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge2" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge2" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge3" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge3" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge4" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge4" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge5" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge5" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge6" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge6" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge7" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge7" method="_on_toggled"]
+[connection signal="toggled" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge8" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BadgeOptions/BadgeLists/BadgesHeld/BadgeList/Badge8" method="_on_toggled"]
+[connection signal="pressed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Finalize/SaveCard" to="." method="open_save_dialog"]
+[connection signal="pressed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Finalize/ExportImpot/ExportCard" to="." method="open_export_dialog"]
+[connection signal="pressed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Finalize/ExportImpot/ImportCard" to="." method="open_import_dialog"]
+[connection signal="file_selected" from="PortraitFileDialog" to="." method="import_portrait"]
+[connection signal="file_selected" from="SaveCardFileDialog" to="." method="save_card"]
+[connection signal="file_selected" from="ImportCardFileDialog" to="." method="import_card"]
+[connection signal="file_selected" from="ExportCardFileDialog" to="." method="export_card"]

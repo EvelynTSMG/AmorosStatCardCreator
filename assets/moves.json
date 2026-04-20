@@ -1,0 +1,634 @@
+{
+    "Top": {
+        "name": "Top",
+        "type": "Vanilla",
+        "power": 30,
+        "category": "Top",
+        "description": "The user has simple vanilla sex, topping their target.",
+        "priority": 0
+    },
+    "Beginner's Top": {
+        "name": "Top",
+        "type": "Vanilla",
+        "power": 30,
+        "category": "Top",
+        "description": "The user has simple vanilla sex, topping their target.\nDeals a critical hit if the target has a status effect.",
+        "priority": 0
+    },
+    "Bottom": {
+        "name": "Bottom",
+        "type": "Vanilla",
+        "power": 30,
+        "category": "Bottom",
+        "description": "The user has simple vanilla sex, bottoming to their target.",
+        "priority": 0
+    },
+    "Beginner's Bottom": {
+        "name": "Bottom",
+        "type": "Vanilla",
+        "power": 30,
+        "category": "Bottom",
+        "description": "The user has simple vanilla sex, bottoming to their target.\nDeals a critical hit if the target has a status effect.",
+        "priority": 0
+    },
+    "Bounce": {
+        "name": "Bounce",
+        "type": "Vanilla",
+        "power": 20,
+        "category": "Bottom",
+        "description": "The user bounces eagerly on their target.\nRaises the user's Horniness.",
+        "priority": 0
+    },
+    "Stroke": {
+        "name": "Stroke",
+        "type": "Vanilla",
+        "power": 10,
+        "category": "Top",
+        "description": "The user uses their hands to please the target.\nHits twice.",
+        "priority": 0
+    },
+    "Mount": {
+        "name": "Mount",
+        "type": "Vanilla",
+        "power": 15,
+        "category": "Top",
+        "description": "The user climbs onto their target to initiate sex.\nDeals a critical hit if used on the user's first turn.",
+        "priority": 0
+    },
+    "Pollinate": {
+        "name": "Pollinate",
+        "type": "Vanilla",
+        "power": 0,
+        "category": "Status",
+        "description": "The user lets out a puff of pollen,\ninflicting the target with <IN HEAT>.",
+        "priority": 0
+    },
+    "Wingman": {
+        "name": "Wingman",
+        "type": "Vanilla",
+        "power": 0,
+        "category": "Status",
+        "description": "The user talks up one of their teammates.\nThe user switches out. The teammate that switches in will\ndeal a critical hit on their next turn.",
+        "priority": -1
+    },
+    "Missionary": {
+        "name": "Missionary",
+        "type": "Vanilla",
+        "power": 30,
+        "category": "Top",
+        "description": "The user has sex with their target in a vanilla position.",
+        "priority": 0
+    },
+    "Give Head": {
+        "name": "Give Head",
+        "type": "Vanilla",
+        "power": 30,
+        "category": "Bottom",
+        "description": "The user uses their mouth to please their target.",
+        "priority": 0
+    },
+    "Role Reversal": {
+        "name": "Role Reversal",
+        "type": "Vanilla",
+        "power": 0,
+        "category": "Status",
+        "description": "The user forces their target to try something new.\nSwaps the target's Top Attack and Bottom Attack stats.",
+        "priority": 0
+    },
+    "Surprise": {
+        "name": "Surprise",
+        "type": "Vanilla",
+        "power": 20,
+        "category": "Top",
+        "description": "The user mopses as fast as they can to suddenly engage the\ntarget before they can react.\nDeals a critical hit if used on the user's first turn.",
+        "priority": 1
+    },
+    "Edge": {
+        "name": "Edge",
+        "type": "Vanilla",
+        "power": 0,
+        "category": "Status",
+        "description": "The user edges, surviving any damage with at least\n1 Health left. If the user takes damage this turn, their\nHorniness sharply raises.",
+        "priority": 3
+    },
+
+
+    "Cuddle": {
+        "name": "Cuddle",
+        "type": "Loving",
+        "power": 0,
+        "category": "Status",
+        "description": "The user snuggles the target, healing 50% of the user's\nmax health while inflicting <HELD> on the target.\nMay be used while the user is <HELD>.",
+        "priority": 0
+    },
+    "Cute Kisses": {
+        "name": "Cute Kisses",
+        "type": "Loving",
+        "power": 5,
+        "category": "Bottom",
+        "description": "The user peppers their target with cute kisses.\nThis move hits 4 times.",
+        "priority": 0
+    },
+    "Warm Embrace": {
+        "name": "Warm Embrace",
+        "type": "Loving",
+        "power": 35,
+        "category": "Top",
+        "description": "The user wraps their arms around their target tight,\nkeeping them held close. Inflicts <HELD>.",
+        "priority": 0
+    },
+    "Cheerlead": {
+        "name": "Cheerlead",
+        "type": "Loving",
+        "power": 0,
+        "category": "Status",
+        "description": "The user hypes up one of their teammates.\nThe user Switches out. The teammate that switches in is\ninflicted with <SWARMING>.",
+        "priority": -1
+    },
+    "Mating Dance": {
+        "name": "Mating Dance",
+        "type": "Loving",
+        "power": 0,
+        "category": "Status",
+        "description": "The user dances alluringly to attack their target.\nClears all Status Effects off the user,\nand inflicts <TRANCE> on the target.",
+        "priority": 0
+    },
+    "Tender Touch": {
+        "name": "Tender Touch",
+        "type": "Loving",
+        "power": 15,
+        "category": "Top",
+        "description": "The user slides their hands up and down the target's body\nlovingly. Raises the user's Top Attack.",
+        "priority": 0
+    },
+    "Hold Hands": {
+        "name": "Hold Hands",
+        "type": "Loving",
+        "power": 10,
+        "category": "Bottom",
+        "description": "The user holds their target's hand.\nIf used on an ally during a double battle, both the user\nand their ally heal 25 health instead.",
+        "priority": 0
+    },
+    "Make Out": {
+        "name": "Make Out",
+        "type": "Loving",
+        "power": 25,
+        "category": "Bottom",
+        "description": "The user makes out with their target.\nDeals a critical hit if the target is in a <TRANCE>",
+        "priority": 0
+    },
+
+
+    "Reversal": {
+        "name": "Reversal",
+        "type": "Muscle",
+        "power": 0,
+        "category": "Status",
+        "description": "May only be used if the user is <HELD>. Clears <HELD> from\nthe user and inflicts <HELD> on the target, while lowering\ntheir Top Attack.",
+        "priority": 0
+    },
+    "Showboat": {
+        "name": "Showboat",
+        "type": "Muscle",
+        "power": 0,
+        "category": "Status",
+        "description": "The user flexes their muscles, showing off.\nShaprly raises the user's Top Attack.",
+        "priority": 0
+    },
+    "Manhandle": {
+        "name": "Manhandle",
+        "type": "Muscle",
+        "power": 20,
+        "category": "Top",
+        "description": "The user tosses their target around with ease.",
+        "priority": 0
+    },
+    "Throw It Back": {
+        "name": "Throw It Back",
+        "type": "Muscle",
+        "power": 15,
+        "category": "Bottom",
+        "description": "The user shakes their ass against the target's hips.\nDeals a critical hit if the user's Horniness has been\nincreased. This move hits 2 times.",
+        "priority": 0
+    },
+    "Thigh Grip": {
+        "name": "Thigh Grip",
+        "type": "Muscle",
+        "power": 30,
+        "category": "Top",
+        "description": "The user locks their legs around their target and squeezes.\nRaises the user's Bottom Attack.",
+        "priority": 0
+    },
+    "Yoga Stretch": {
+        "name": "Yoga Stretch",
+        "type": "Muscle",
+        "power": 0,
+        "category": "Status",
+        "description": "The user stretches,\nflaunting themselves while limbering up.\nSharply raises the user's Bottom Attack.",
+        "priority": 0
+    },
+    "Bear Hug": {
+        "name": "Bear Hug",
+        "type": "Muscle",
+        "power": 30,
+        "category": "Top",
+        "description": "The user squeezes the target in their beefy arms\nas they have sex. Inflicts <HELD>.\nDeals a critical hit against LOVING-Types",
+        "priority": 0
+    },
+    "Hoisted Plow": {
+        "name": "Hoisted Plow",
+        "type": "Muscle",
+        "power": 10,
+        "category": "Top",
+        "description": "The user lifts the target high into the air and fucks them hard.\nInflict <HELD> on the target. Hits 5 times.",
+        "priority": 0
+    },
+
+
+    "Concentrate": {
+        "name": "Concentrate",
+        "type": "Control",
+        "power": 0,
+        "category": "Status",
+        "description": "The user focusses on their target, learning their Type and\npreventing the user from taking damage this turn.",
+        "priority": 3
+    },
+    "Instruct": {
+        "name": "Instruct",
+        "type": "Control",
+        "power": 15,
+        "category": "Bottom",
+        "description": "The user gives their target instuctions on how better to\nfuck them. Inflicts <EMBARASSED>.\nThe user heals 10 health.",
+        "priority": -1
+    },
+    "Thorn Whip": {
+        "name": "Thorn Whip",
+        "type": "Control",
+        "power": 30,
+        "category": "Top",
+        "description": "The user uses a vine of thorns to lash out at their target.",
+        "priority": 0
+    },
+    "Serpent Squeeze": {
+        "name": "Serpent\nSqueeze",
+        "type": "Control",
+        "power": 20,
+        "category": "Top",
+        "description": "The user slithers around their target with their body to\nconstrict their movements. Inflicts <HELD>.",
+        "priority": 0
+    },
+    "Step On": {
+        "name": "Step On",
+        "type": "Control",
+        "power": 25,
+        "category": "Top",
+        "description": "The user steps on their target, pushing them into the dirt.\nDeals a critical hit if any of the user's stats are currently\nincreased. Inflicts <HELD>",
+        "priority": 0
+    },
+
+
+    "Rivalry Boost": {
+        "name": "Rivalry Boost",
+        "type": "Instinct",
+        "power": 0,
+        "category": "Status",
+        "description": "The user strives to match their target's strengths.\nSharply raises a stat for the user, chosen based on the\ntarget's highest non-Stamina base stat.",
+        "priority": 1
+    },
+    "Doggystyle": {
+        "name": "Doggystyle",
+        "type": "Instinct",
+        "power": 25,
+        "category": "Top",
+        "description": "The user mounts their target doggystyle. Inflicts <HELD>.",
+        "priority": 0
+    },
+    "Rhythmic Hips": {
+        "name": "Rhythmic\nHips",
+        "type": "Instinct",
+        "power": 10,
+        "category": "Bottom",
+        "description": "The user thrusts their body against their target\nrhythmically. Deals a critical hit if the target currently\nhas any Status Effect. Hits 3 times.",
+        "priority": 0
+    },
+    "Bite": {
+        "name": "Bite",
+        "type": "Instinct",
+        "power": 20,
+        "category": "Top",
+        "description": "The user bites their target.\nNegates any stat raises the target gained this turn.",
+        "priority": -1
+    },
+    "Glomp": {
+        "name": "Glomp",
+        "type": "Instinct",
+        "power": 20,
+        "category": "Bottom",
+        "description": "The user lunges at their target to tackle them into a sexual\nhug. Inflicts <HELD>.",
+        "priority": 1
+    },
+    "Roar": {
+        "name": "Roar",
+        "type": "Instinct",
+        "power": 0,
+        "category": "Status",
+        "description": "The user lets out a mighty, threatening roar. Raises the\nuser's Top Defense and inflicts <AFRAID> on the target.",
+        "priority": 2
+    },
+
+
+    "Strap Swap": {
+        "name": "Strap Swap",
+        "type": "Toy",
+        "power": 0,
+        "category": "Status",
+        "description": "The user swaps their own Top and Bottom stas.\nThe user heals 15 HP.",
+        "priority": 0
+    },
+    "Strap Swap 2": {
+        "name": "Strap Swap",
+        "type": "Toy",
+        "power": 0,
+        "category": "Status",
+        "description": "The user swaps their own Top and Bottom stas. The user's\nnext move deals damage as if it's the user's only type.\nThe user heals 15 HP.",
+        "priority": 0
+    },
+    "Sticky Web": {
+        "name": "Sticky Web",
+        "type": "Toy",
+        "power": 0,
+        "category": "Status",
+        "description": "The user spins a web around the target to restrain them.\nInflicts <HELD>. Lower's the target's Horniness.",
+        "priority": 2
+    },
+    "Shibari": {
+        "name": "Shibari",
+        "type": "Toy",
+        "power": 35,
+        "category": "Top",
+        "description": "The user ties up the target in swiftly-spun webbing.\nInflicts <HELD>.",
+        "priority": 0
+    },
+    "Fist Plug": {
+        "name": "Fist Plug",
+        "type": "Toy",
+        "power": 25,
+        "category": "Top",
+        "description": "The user plunges their entire fist into the target's hole.\nDeals a critical hit if the user has taken damage this turn.",
+        "priority": 0
+    },
+    "Slurp": {
+        "name": "Slurp",
+        "type": "Toy",
+        "power": 20,
+        "category": "Bottom",
+        "description": "The user sucks at their target like a pocket pussy",
+        "priority": 0
+    },
+    "Onahole": {
+        "name": "Onahole",
+        "type": "Toy",
+        "power": 10,
+        "category": "Bottom",
+        "description": "The user bounces on their target, tugging them into a tight\nhole. Hits three times.",
+        "priority": 0
+    },
+
+
+    "Gremlin Mode": {
+        "name": "Gremlin\nMode",
+        "type": "Freak",
+        "power": 10,
+        "category": "Top",
+        "description": "The user lets loose with their target, feverishly using their\nbody however they can. Hits 3 times.\nRaises the user's Horininess",
+        "priority": 0
+    },
+    "Lick": {
+        "name": "Lick",
+        "type": "Freak",
+        "power": 20,
+        "category": "Top",
+        "description": "The user licks the target with a single, long lap of the\ntongue. The user steals one of the target's positive stat\nchanges, chosen at random.",
+        "priority": 0
+    },
+    "Honey Kiss": {
+        "name": "Honey Kiss",
+        "type": "Freak",
+        "power": 0,
+        "category": "Status",
+        "description": "Honey dripts from the user's lips as they kiss their target.\nInflicts <HELD> and sharply lowers the target's Horniness.",
+        "priority": 0
+    },
+
+
+    "Tease": {
+        "name": "Tease",
+        "type": "Spoiled",
+        "power": 0,
+        "category": "Status",
+        "description": "The user makes fun of their target. Inflicts <EMBARASSED>.",
+        "priority": 0
+    },
+    "Boss Around": {
+        "name": "Boss Around",
+        "type": "Spoiled",
+        "power": 15,
+        "category": "Top",
+        "description": "The user bosses their target around mercilessly.\nDeals a critical hit if the target is <EMBARASSED>.",
+        "priority": 0
+    },
+    "Misbehave": {
+        "name": "Misbehave",
+        "type": "Spoiled",
+        "power": 10,
+        "category": "Bottom",
+        "description": "The user gives their target a hard time, refusing to do as\nthey say. All Neutral damage the user takes this turn is\nnow Not Very Effective.",
+        "priority": 0
+    },
+    "Face Sit": {
+        "name": "Face Sit",
+        "type": "Spoiled",
+        "power": 25,
+        "category": "Bottom",
+        "description": "The user plops their booty down onto the target's face.\nDeals a critical hit if the user's Bottom Attack\nis currently raised.",
+        "priority": 0
+    },
+    "Kittystyle": {
+        "name": "Kittystyle",
+        "type": "Spoiled",
+        "power": 30,
+        "category": "Bottom",
+        "description": "The user seduces the target into mounting them doggystyle.",
+        "priority": 0
+    },
+    "Ridicule": {
+        "name": "Ridicule",
+        "type": "Spoiled",
+        "power": 20,
+        "category": "Top",
+        "description": "The user lambastes their target while making sensual\ncontact. Inflicts <EMBARASSED>",
+        "priority": 0
+    },
+
+
+    "Tag Team": {
+        "name": "Tag Team",
+        "type": "Group",
+        "power": 10,
+        "category": "Top",
+        "description": "The user tag teams the target, taking them on from multiple\nangles. This move hits twice.",
+        "priority": 0
+    },
+    "Double Blowjob": {
+        "name": "Double\nBlowjob",
+        "type": "Group",
+        "power": 10,
+        "category": "Bottom",
+        "description": "The users both use their mouths on their target at the same\ntime. This move hits twice.",
+        "priority": 0
+    },
+    "Take Turns": {
+        "name": "Take Turns",
+        "type": "Group",
+        "power": 15,
+        "category": "Bottom",
+        "description": "The users take turns amongst themselves, giving their\nother bodies opportunities to heal. Heals 20 HP.",
+        "priority": 0
+    },
+    "Group Grope": {
+        "name": "Group Grope",
+        "type": "Group",
+        "power": 5,
+        "category": "Top",
+        "description": "The user grabs their target with four or more hands,\ngripping and squeezing them all over. Inflicts <HELD>.\nThis move hits 7 times.",
+        "priority": 0
+    },
+
+
+    "Squirm": {
+        "name": "Squirm",
+        "type": "Pathetic",
+        "power": 15,
+        "category": "Bottom",
+        "description": "The user wiggles around pathetically.\nDeals a critical hit if the user is <HELD>",
+        "priority": 0
+    },
+    "Hump": {
+        "name": "Hump",
+        "type": "Pathetic",
+        "power": 10,
+        "category": "Top",
+        "description": "The user mounts their target and pitifully thrusts away at\nthem. This move hits 3 times.",
+        "priority": 0
+    },
+    "Pleading Eyes": {
+        "name": "Pleading Eyes",
+        "type": "Pathetic",
+        "power": 0,
+        "category": "Status",
+        "description": "The user looks up at the target with a needy expression.\nLowers the target's Bottom Attack and Bottom Defense.",
+        "priority": 0
+    },
+    "Fail Forwards": {
+        "name": "Fail Forwards",
+        "type": "Pathetic",
+        "power": 15,
+        "category": "Top",
+        "description": "The user slips up,\nknocking their target down and landing atop them.\nInflicts <HELD>, and lowers the target's Top Attack.",
+        "priority": 1
+    },
+    "Shy Scurry": {
+        "name": "Shy Scurry",
+        "type": "Pathetic",
+        "power": 0,
+        "category": "Status",
+        "description": "The user gets too worked up, and can't face their opponent.\nLowers the target's Top Attack, and switches the user out.",
+        "priority": 0
+    },
+    "Beg": {
+        "name": "Beg",
+        "type": "Pathetic",
+        "power": 0,
+        "category": "Status",
+        "description": "The user begs their target for attention,\nchanging the target of their target's next move to the user.",
+        "priority": 3
+    },
+    "Whimper": {
+        "name": "Whimper",
+        "type": "Pathetic",
+        "power": 30,
+        "category": "Bottom",
+        "description": "The user cries out cutely in pleasure.",
+        "priority": 0
+    },
+
+
+    "Slip In": {
+        "name": "Slip In",
+        "type": "Tentacle",
+        "power": 20,
+        "category": "Top",
+        "description": "The user slides a tentacle into their target with ease.",
+        "priority": 0
+    },
+    "Squishy Coil": {
+        "name": "Squishy Coil",
+        "type": "Tentacle",
+        "power": 30,
+        "category": "Bottom",
+        "description": "The user wraps their soft tentacles around the target,\nsqueezing them softly. Inflicts <HELD>.",
+        "priority": 0
+    },
+
+
+    "Deep Breaths": {
+        "name": "Deep Breaths",
+        "type": "Stoic",
+        "power": 0,
+        "category": "Status",
+        "description": "The user calms themselves. Removes all status effects\nfrom the user, lowers the user's horniness and raises\ntheir Bottom Defense.",
+        "priority": 0
+    },
+    "Steady Thrusts": {
+        "name": "Steady Thrusts",
+        "type": "Stoic",
+        "power": 10,
+        "category": "Top",
+        "description": "The user pounds their target with unwavering dedication.\nThis attack cannot be prevented by another move nor by a\nstatus effect. This move hits 3 times.",
+        "priority": 0
+    },
+
+
+    "Clench": {
+        "name": "Clench",
+        "type": "Rage",
+        "power": 25,
+        "category": "Bottom",
+        "description": "The user tightens up, squeezing their target hard\nand not letting go. Inflicts <HELD>.",
+        "priority": 0
+    },
+    "Enrage": {
+        "name": "Enrage",
+        "type": "Rage",
+        "power": 0,
+        "category": "Status",
+        "description": "The user's next attack will deal a critical hit. Raises the user's Top Attack",
+        "priority": 0
+    },
+    "Lash Out": {
+        "name": "Lash Out",
+        "type": "Rage",
+        "power": 15,
+        "category": "Top",
+        "description": "The user strikes at their target, knocking them down.\nIf this move goes first, the target's move fails this turn.\nSharply lowers the user's Horniness",
+        "priority": 0
+    },
+    "Fight Back": {
+        "name": "Fight Back",
+        "type": "Rage",
+        "power": 10,
+        "category": "Bottom",
+        "description": "The user puts up a fight against the target, punching and\nbiting from below. Hits 3 times.\nHits an additional time if the user is <HELD>.",
+        "priority": 0
+    },
+}
