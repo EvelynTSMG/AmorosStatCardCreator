@@ -1,7 +1,7 @@
 extends Button
 
 
-@export var value_connect : String
+@export var value_connect: String
 
 
 func _on_toggled(toggled_on: bool) -> void:

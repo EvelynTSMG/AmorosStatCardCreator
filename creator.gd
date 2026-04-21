@@ -26,29 +26,29 @@ enum ColorSet {
 
 @export var companion_type = AmorosData.AmorosCompanionType.Pokemon;
 
-@export var pronouns = "";
-@export var genitals = "";
-@export var species = "";
+@export var pronouns: String = "";
+@export var genitals: String = "";
+@export var species: String = "";
 
-@export var auto_infer_type = true;
-@export var type1 = AmorosData.AmorosType.None;
-@export var type2 = AmorosData.AmorosType.None;
+@export var auto_infer_type: bool = true;
+@export var type1 := AmorosData.AmorosType.None;
+@export var type2 := AmorosData.AmorosType.None;
 
 @export_group("Stats")
-@export_range(1,60) var stamina = 10;
-@export_range(1,60) var top_atk = 10;
-@export_range(1,60) var bot_atk = 10;
-@export_range(1,60) var top_def = 10;
-@export_range(1,60) var bot_def = 10;
-@export_range(1,60) var horniness = 10;
+@export_range(1,60) var stamina: int = 10;
+@export_range(1,60) var top_atk: int = 10;
+@export_range(1,60) var bot_atk: int = 10;
+@export_range(1,60) var top_def: int = 10;
+@export_range(1,60) var bot_def: int = 10;
+@export_range(1,60) var horniness: int = 10;
 
-@export_range(0,120) var current_health = 20;
+@export_range(0,120) var current_health: int = 20;
 
 @export_group("Badges, Bond, Experience")
-@export_range(0, 10) var experience = 0;
-@export_range(0, 10) var locked_experience = 0;
-@export_range(0, 6) var bond = 0;
-@export var badges_always_visible = false;
+@export_range(0, 10) var experience: int = 0;
+@export_range(0, 10) var locked_experience: int = 0;
+@export_range(0, 6) var bond: int = 0;
+@export var badges_always_visible: bool = false;
 
 @export_subgroup("Badges")
 @export var pity = false;
@@ -384,6 +384,18 @@ func import_portrait(path: String) -> void:
 	($"/root/Creator/Card/DataPanel/Portrait").texture = ImageTexture.create_from_image(image);
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	# For saving the image using F12
+	if event.is_action_pressed("ui_screenshot"):
+		open_save_dialog();
+	
+	# For pasting images using ctrl + V
+	if event.is_action_pressed("ui_paste"):
+		if DisplayServer.clipboard_has_image():
+			var image = DisplayServer.clipboard_get_image()
+			($"/root/Creator/Card/DataPanel/Portrait").texture = ImageTexture.create_from_image(image);
+
+
 func open_portrait_dialog() -> void:
 	($PortraitFileDialog).popup_file_dialog();
 
@@ -393,9 +405,6 @@ func set_value_of(valueof: String, value) -> void:
 
 
 func _process(_delta: float) -> void:
-	if (Input.is_action_just_pressed("ui_screenshot")):
-		open_save_dialog();
-	
 	($Card/DataPanel/Name).text = character_name;
 
 	# Details
