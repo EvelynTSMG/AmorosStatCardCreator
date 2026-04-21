@@ -1229,6 +1229,11 @@ theme_override_fonts/font = SubResource("SystemFont_w81gy")
 theme_override_font_sizes/font_size = 18
 text = "Upload portrait"
 
+[node name="Label" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails" unique_id=1484603686]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "portrait recommended 180*180 px"
+
 [node name="Types" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=362861688]
 layout_mode = 2
 
