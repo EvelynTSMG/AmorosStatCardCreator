@@ -31,8 +31,8 @@ enum ColorSet {
 @export var species: String = "";
 
 @export var auto_infer_type: bool = true;
-@export var type1:= AmorosData.AmorosType.None;
-@export var type2:= AmorosData.AmorosType.None;
+@export var type1 := AmorosData.AmorosType.None;
+@export var type2 := AmorosData.AmorosType.None;
 
 @export_group("Stats")
 @export_range(1,60) var stamina: int = 10;
@@ -388,6 +388,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	# For saving the image using F12
 	if event.is_action_pressed("ui_screenshot"):
 		open_save_dialog();
+	
 	# For pasting images using ctrl + V
 	if event.is_action_pressed("ui_paste"):
 		if DisplayServer.clipboard_has_image():
