@@ -1,7 +1,7 @@
 extends ColorPickerButton
 
 
-@export var value_connect : String
+@export var value_connect: String
 
 
 func _on_color_changed(colorpicked: Color) -> void:

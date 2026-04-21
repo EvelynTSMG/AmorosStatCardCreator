@@ -1,8 +1,8 @@
 extends LineEdit
 
 
-@export var value_connect : String
-@export var is_numeric : bool
+@export var value_connect: String
+@export var is_numeric: bool
 
 func _on_text_changed(new:String) -> void:
 	if is_numeric:

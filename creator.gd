@@ -26,29 +26,29 @@ enum ColorSet {
 
 @export var companion_type = AmorosData.AmorosCompanionType.Pokemon;
 
-@export var pronouns : String = "";
-@export var genitals : String = "";
-@export var species : String = "";
+@export var pronouns: String = "";
+@export var genitals: String = "";
+@export var species: String = "";
 
-@export var auto_infer_type : bool = true;
-@export var type1 : AmorosData.AmorosType = AmorosData.AmorosType.None;
-@export var type2 : AmorosData.AmorosType = AmorosData.AmorosType.None;
+@export var auto_infer_type: bool = true;
+@export var type1:= AmorosData.AmorosType.None;
+@export var type2:= AmorosData.AmorosType.None;
 
 @export_group("Stats")
-@export_range(1,60) var stamina : int = 10;
-@export_range(1,60) var top_atk : int = 10;
-@export_range(1,60) var bot_atk : int = 10;
-@export_range(1,60) var top_def : int = 10;
-@export_range(1,60) var bot_def : int = 10;
-@export_range(1,60) var horniness : int = 10;
+@export_range(1,60) var stamina: int = 10;
+@export_range(1,60) var top_atk: int = 10;
+@export_range(1,60) var bot_atk: int = 10;
+@export_range(1,60) var top_def: int = 10;
+@export_range(1,60) var bot_def: int = 10;
+@export_range(1,60) var horniness: int = 10;
 
-@export_range(0,120) var current_health : int = 20;
+@export_range(0,120) var current_health: int = 20;
 
 @export_group("Badges, Bond, Experience")
-@export_range(0, 10) var experience : int = 0;
-@export_range(0, 10) var locked_experience : int = 0;
-@export_range(0, 6) var bond : int = 0;
-@export var badges_always_visible : bool = false;
+@export_range(0, 10) var experience: int = 0;
+@export_range(0, 10) var locked_experience: int = 0;
+@export_range(0, 6) var bond: int = 0;
+@export var badges_always_visible: bool = false;
 
 @export_subgroup("Badges")
 @export var pity = false;
@@ -387,9 +387,9 @@ func import_portrait(path: String) -> void:
 ## Button commands
 func _unhandled_input(event: InputEvent) -> void:
 	## For pasting images using ctrl + V
-	if (Input.is_action_pressed("ui_screenshot")):
+	if event.is_action_pressed("ui_screenshot"):
 		open_save_dialog();
-	elif event.is_action_pressed("paste"):
+	if event.is_action_pressed("ui_paste"):
 		if DisplayServer.clipboard_has_image():
 			var image = DisplayServer.clipboard_get_image()
 			($"/root/Creator/Card/DataPanel/Portrait").texture = ImageTexture.create_from_image(image);

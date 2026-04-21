@@ -1,21 +1,21 @@
 extends OptionButton
 
 
-@export var value_connect : String
+@export var value_connect: String
 enum UseableEnums {
 	TYPES,
 	COMPANION_TYPES,
 	COLORS,
 	MOVE_CATEGORY
 }
-var useable_enums : Dictionary = {
+var useable_enums: Dictionary = {
 	UseableEnums.TYPES: AmorosData.AmorosType,
 	UseableEnums.COMPANION_TYPES: AmorosData.AmorosCompanionType,
 	UseableEnums.COLORS: Creator.ColorSet,
 	UseableEnums.MOVE_CATEGORY: AmorosData.AmorosMoveCategory,
 }
 
-@export var dropdowntype : UseableEnums
+@export var dropdowntype: UseableEnums
 
 
 func _ready() -> void:
