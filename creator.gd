@@ -384,11 +384,11 @@ func import_portrait(path: String) -> void:
 	($"/root/Creator/Card/DataPanel/Portrait").texture = ImageTexture.create_from_image(image);
 
 
-## Button commands
 func _unhandled_input(event: InputEvent) -> void:
-	## For pasting images using ctrl + V
+	# For saving the image using F12
 	if event.is_action_pressed("ui_screenshot"):
 		open_save_dialog();
+	# For pasting images using ctrl + V
 	if event.is_action_pressed("ui_paste"):
 		if DisplayServer.clipboard_has_image():
 			var image = DisplayServer.clipboard_get_image()
