@@ -1233,8 +1233,10 @@ text = "Upload portrait"
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Recommended Portrait Size: 180x180"
+horizontal_alignment = 1
 
 [node name="Types" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=362861688]
+visible = false
 layout_mode = 2
 
 [node name="Header" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Types" unique_id=136158155]
@@ -1268,6 +1270,7 @@ script = ExtResource("26_dx200")
 value_connect = "type2"
 
 [node name="Colors" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=624247687]
+visible = false
 layout_mode = 2
 
 [node name="Header" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Colors" unique_id=841554910]
@@ -1425,7 +1428,6 @@ popup/item_0/text = "None"
 popup/item_0/id = 0
 
 [node name="CustomMoveEditor" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=946310975]
-visible = false
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 script = ExtResource("29_klx58")
@@ -1437,6 +1439,99 @@ text = "Custom Move Editor"
 label_settings = SubResource("LabelSettings_w81gy")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AddFailKnownMovePopup" type="AcceptDialog" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=541444144]
+oversampling_override = 1.0
+title = "Error"
+initial_position = 2
+size = Vector2i(324, 106)
+ok_button_text = "  Accept  "
+dialog_text = "Failed to add custom move:
+Move id is the same as a known move's."
+
+[node name="AddFailBadIdPopup" type="AcceptDialog" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=2103903753]
+oversampling_override = 1.0
+title = "Error"
+initial_position = 2
+size = Vector2i(229, 106)
+ok_button_text = "  Accept  "
+dialog_text = "Failed to add custom move:
+Move id is missing."
+
+[node name="RemoveFailBadIdPopup" type="AcceptDialog" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=2134645803]
+oversampling_override = 1.0
+title = "Error"
+initial_position = 2
+size = Vector2i(259, 106)
+ok_button_text = "  Accept  "
+dialog_text = "Failed to remove custom move:
+No move chosen."
+
+[node name="AddFailBadNamePopup" type="AcceptDialog" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=1436280840]
+oversampling_override = 1.0
+title = "Error"
+initial_position = 2
+size = Vector2i(229, 106)
+ok_button_text = "  Accept  "
+dialog_text = "Failed to add custom move:
+Move name is missing."
+
+[node name="AddFailBadDescriptionPopup" type="AcceptDialog" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=1566118658]
+oversampling_override = 1.0
+title = "Error"
+initial_position = 2
+size = Vector2i(234, 106)
+ok_button_text = "  Accept  "
+dialog_text = "Failed to add custom move:
+Move description is missing."
+
+[node name="AddFailBadTypePopup" type="AcceptDialog" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=1517011384]
+oversampling_override = 1.0
+title = "Error"
+initial_position = 2
+size = Vector2i(234, 106)
+ok_button_text = "  Accept  "
+dialog_text = "Failed to add custom move:
+Move type is missing."
+
+[node name="AddFailBadPowerPopup" type="AcceptDialog" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=2051323687]
+oversampling_override = 1.0
+title = "Error"
+initial_position = 2
+size = Vector2i(330, 106)
+ok_button_text = "  Accept  "
+dialog_text = "Failed to add custom move:
+Move power is missing or not an integer."
+
+[node name="AddFailBadPriorityPopup" type="AcceptDialog" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=30454980]
+oversampling_override = 1.0
+title = "Error"
+initial_position = 2
+size = Vector2i(229, 106)
+ok_button_text = "  Accept  "
+dialog_text = "Failed to add custom move:
+Move priority is missing."
+
+[node name="ReplacePopup" type="ConfirmationDialog" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=668282562]
+oversampling_override = 1.0
+title = "Warning"
+initial_position = 2
+size = Vector2i(413, 106)
+ok_button_text = "  Confirm  "
+dialog_text = "This move id is shared by an existing custom move.
+Are you sure you want to replace that move?"
+cancel_button_text = "  Cancel  "
+
+[node name="ConfirmSelectionPopup" type="ConfirmationDialog" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=724397843]
+oversampling_override = 1.0
+title = "Warning"
+initial_position = 2
+size = Vector2i(379, 132)
+ok_button_text = "  Confirm  "
+dialog_text = "Selecting a move here will overwrite the values
+currently inputted in the custom move editor.
+Proceed?"
+cancel_button_text = "  Cancel  "
 
 [node name="Columns" type="HBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=896349554]
 layout_mode = 2
@@ -1472,9 +1567,6 @@ size_flags_horizontal = 3
 theme_override_fonts/font = SubResource("SystemFont_w81gy")
 theme_override_font_sizes/font_size = 18
 flat = false
-item_count = 1
-popup/item_0/text = "None"
-popup/item_0/id = 0
 
 [node name="RemoveButton" type="Button" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn/Remover" unique_id=963634606]
 custom_minimum_size = Vector2(30, 30)
@@ -1482,7 +1574,7 @@ layout_mode = 2
 size_flags_horizontal = 10
 text = "-"
 
-[node name="Button" type="Button" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn" unique_id=203131907]
+[node name="SaveButton" type="Button" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn" unique_id=203131907]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_w81gy")
@@ -1518,8 +1610,6 @@ custom_minimum_size = Vector2(97, 30)
 layout_mode = 2
 size_flags_horizontal = 0
 placeholder_text = "Power"
-script = ExtResource("25_gx2f5")
-is_numeric = true
 
 [node name="Priority" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/RightColumn/DamageStats" unique_id=1205207197]
 custom_minimum_size = Vector2(97, 30)
@@ -1809,6 +1899,14 @@ mode_overrides_title = false
 access = 2
 filters = PackedStringArray("*.json")
 
+[node name="UnsavedMovesExitConfirmation" type="ConfirmationDialog" parent="." unique_id=440802880]
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(277, 106)
+ok_button_text = "Confirm"
+dialog_text = "You have unsaved custom moves.
+Are you sure you want to exit?"
+
 [connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/Name" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/Name" method="_on_text_changed"]
 [connection signal="item_selected" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/CompanionType" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/CompanionType" method="_on_item_selected"]
 [connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/Pronouns" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/BasicDetails/Pronouns" method="_on_text_changed"]
@@ -1828,13 +1926,11 @@ filters = PackedStringArray("*.json")
 [connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/TopDef" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/TopDef" method="_on_text_changed"]
 [connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/BotDef" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/StatsGrid/BotDef" method="_on_text_changed"]
 [connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/Horniness" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Stats/Horniness" method="_on_text_changed"]
-[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn/Adder/Id" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_on_name_text_changed"]
-[connection signal="item_selected" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/RightColumn/Type" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_on_type_item_selected"]
-[connection signal="item_selected" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/RightColumn/Category" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_on_category_item_selected"]
-[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/RightColumn/DamageStats/Power" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_on_power_text_changed"]
-[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/RightColumn/DamageStats/Priority" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_on_priority_text_changed"]
-[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Name" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_on_name_text_changed"]
-[connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Description" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_on_description_text_changed"]
+[connection signal="confirmed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/ReplacePopup" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_add_move" binds= [true]]
+[connection signal="confirmed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/ConfirmSelectionPopup" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_select_last_move"]
+[connection signal="pressed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn/Adder/AddButton" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_add_move"]
+[connection signal="pressed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn/Remover/RemoveButton" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" method="_remove_move"]
+[connection signal="pressed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor/Columns/LeftColumn/SaveButton" to="." method="save_custom_moves"]
 [connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond/Experience" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond/Experience" method="_on_text_changed"]
 [connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond/LockedExperience" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond/LockedExperience" method="_on_text_changed"]
 [connection signal="text_changed" from="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond/Bond" to="EditorUI/ScrollContainer/MarginContainer/OptionPanels/EXPBond/Bond" method="_on_text_changed"]
@@ -1862,3 +1958,4 @@ filters = PackedStringArray("*.json")
 [connection signal="file_selected" from="SaveCardFileDialog" to="." method="save_card"]
 [connection signal="file_selected" from="ImportCardFileDialog" to="." method="import_card"]
 [connection signal="file_selected" from="ExportCardFileDialog" to="." method="export_card"]
+[connection signal="confirmed" from="UnsavedMovesExitConfirmation" to="." method="close"]

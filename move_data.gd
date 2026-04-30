@@ -54,7 +54,7 @@ static func verify_json(id: String, json: Dictionary) -> bool:
 		return false;
 	
 	if typeof(json["power"]) != TYPE_INT and (typeof(json["power"]) != TYPE_FLOAT or json["power"] != json["power"] as int):
-		print("[ERROR] Failed to load move data: ", id, " has non-int power");
+		print("[ERROR] Failed to load move data: ", id, " has non-int power: ", json["power"]);
 		return false;
 	
 	if not json.has("category"):
@@ -93,3 +93,14 @@ static func from_json(json: Dictionary) -> MoveData:
 		json["description"],
 		json["priority"],
 	);
+
+
+func into_json() -> Dictionary:
+	return {
+		"name": name,
+		"type": str(AmorosData.AmorosType.keys()[type]),
+		"power": power,
+		"category": str(AmorosData.AmorosMoveCategory.keys()[category]),
+		"description": description,
+		"priority": priority,
+	};

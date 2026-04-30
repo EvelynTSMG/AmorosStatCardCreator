@@ -4,6 +4,7 @@ extends Control
 
 
 @export var exists: bool = false;
+@export var move_id: String = "";
 @export_multiline var move_name: String = "";
 @export var type: AmorosData.AmorosType = AmorosData.AmorosType.None;
 @export_range(0, 60, 5) var power: int = 10;
@@ -48,7 +49,8 @@ func _process(_delta: float) -> void:
 		($Data/Priority).text = str(priority);
 
 
-func load_data(data: MoveData):
+func load_data(id: String, data: MoveData):
+	move_id = id;
 	move_name = data.name;
 	type = data.type;
 	power = data.power;

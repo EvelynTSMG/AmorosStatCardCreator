@@ -90,7 +90,12 @@ var selected_move3: int;
 var selected_move4: int;
 
 
+var has_unsaved_changes: bool = false;
+
+
 func _ready() -> void:
+	get_tree().set_auto_accept_quit(false);
+	
 	($ScreenshotView).world_2d = get_viewport().world_2d;
 	($ScreenshotView).render_target_update_mode = SubViewport.UPDATE_ALWAYS;
 	($ScreenshotView).canvas_transform.origin = Vector2(-100, -300);
@@ -99,17 +104,15 @@ func _ready() -> void:
 	
 	# Populate move lists
 	AmorosData.load_known_moves();
+	AmorosData.load_custom_moves();
 	
 	move_menu1 = ($EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList/Move1).get_popup();
 	move_menu2 = ($EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList/Move2).get_popup();
 	move_menu3 = ($EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList/Move3).get_popup();
 	move_menu4 = ($EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList/Move4).get_popup();
 	
-	for key in AmorosData.known_moves:
-		move_menu1.add_item(key);
-		move_menu2.add_item(key);
-		move_menu3.add_item(key);
-		move_menu4.add_item(key);
+	rebuild_move_lists();
+	($EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor as CustomMoveEditor).rebuild_move_list();
 	
 	move_menu1.index_pressed.connect(select_move1);
 	move_menu2.index_pressed.connect(select_move2);
@@ -117,15 +120,31 @@ func _ready() -> void:
 	move_menu4.index_pressed.connect(select_move4);
 
 
+func _notification(msg) -> void:
+	if msg == NOTIFICATION_WM_CLOSE_REQUEST:
+		if has_unsaved_changes:
+			($UnsavedMovesExitConfirmation).show();
+		else:
+			get_tree().quit();
+
+
+func close() -> void:
+	get_tree().quit();
+
+
 func select_move(idx: int, menu: MenuButton, move: Move) -> void:
-	var move_name = menu.get_popup().get_item_text(idx);
-	menu.text = move_name;
+	var move_id = menu.get_popup().get_item_text(idx);
+	menu.text = move_id;
 	
-	if move_name == "None":
+	if move_id == "None":
 		move.exists = false;
+		return;
+
+	move.exists = true;
+	if move_id in AmorosData.known_moves.keys():
+		move.load_data(move_id, AmorosData.known_moves[move_id]);
 	else:
-		move.exists = true;
-		move.load_data(AmorosData.known_moves[move_name]);
+		move.load_data(move_id, AmorosData.custom_moves[move_id]);
 
 func select_move1(idx: int) -> void:
 	select_move(
@@ -158,6 +177,86 @@ func select_move4(idx: int) -> void:
 		($Card/RightPanel/MoveSet/Move4)
 	);
 	selected_move4 = idx;
+
+
+func rebuild_move_lists() -> void:
+	move_menu1.clear();
+	move_menu2.clear();
+	move_menu3.clear();
+	move_menu4.clear();
+	
+	move_menu1.add_item("None");
+	move_menu2.add_item("None");
+	move_menu3.add_item("None");
+	move_menu4.add_item("None");
+	
+	for key in AmorosData.known_moves:
+		move_menu1.add_item(key);
+		move_menu2.add_item(key);
+		move_menu3.add_item(key);
+		move_menu4.add_item(key);
+	
+	for key in AmorosData.custom_moves:
+		move_menu1.add_item(key);
+		move_menu2.add_item(key);
+		move_menu3.add_item(key);
+		move_menu4.add_item(key);
+
+
+func add_custom_move(id: String, data: MoveData) -> void:
+	AmorosData.custom_moves[id] = data;
+	has_unsaved_changes = true;
+	
+	# Easier to reset then sort
+	rebuild_move_lists();
+	($EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor as CustomMoveEditor).rebuild_move_list();
+
+
+func remove_custom_move(id: String) -> void:
+	AmorosData.custom_moves.erase(id);
+	has_unsaved_changes = true;
+	
+	# Easier to reset then try to find it
+	rebuild_move_lists();
+	($EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor as CustomMoveEditor).rebuild_move_list();
+	
+	# Make sure to not keep it around
+	if ($Card/RightPanel/MoveSet/Move1 as Move).move_id == id:
+		selected_move1 = 0;
+		select_move(
+			0,
+			($EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList/Move1),
+			($Card/RightPanel/MoveSet/Move1)
+		);
+	
+	if ($Card/RightPanel/MoveSet/Move2 as Move).move_id == id:
+		selected_move2 = 0;
+		select_move(
+			0,
+			($EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList/Move2),
+			($Card/RightPanel/MoveSet/Move2)
+		);
+	
+	if ($Card/RightPanel/MoveSet/Move3 as Move).move_id == id:
+		selected_move4 = 0;
+		select_move(
+			0,
+			($EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList/Move3),
+			($Card/RightPanel/MoveSet/Move3)
+		);
+	
+	if ($Card/RightPanel/MoveSet/Move4 as Move).move_id == id:
+		selected_move4 = 0;
+		select_move(
+			0,
+			($EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList/Move4),
+			($Card/RightPanel/MoveSet/Move4)
+		);
+
+
+func save_custom_moves() -> void:
+	AmorosData.save_custom_moves();
+	has_unsaved_changes = false;
 
 
 func export_card(path: String) -> void:

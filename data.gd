@@ -101,6 +101,7 @@ enum AmorosBadges {
 
 
 static var known_moves: Dictionary[String, MoveData];
+static var custom_moves: Dictionary[String, MoveData];
 
 static func load_known_moves() -> void:
 	var base_dir = "res://" if OS.has_feature("editor") else OS.get_executable_path().get_base_dir() + "/";
@@ -112,6 +113,7 @@ static func load_known_moves() -> void:
 	
 	var file = FileAccess.open(filepath, FileAccess.ModeFlags.READ);
 	var json_string = file.get_as_text();
+	file.close();
 
 	var json = JSON.new();
 	var error = json.parse(json_string);
@@ -123,7 +125,7 @@ static func load_known_moves() -> void:
 	var data_received = json.data;
 	
 	if typeof(data_received) != TYPE_DICTIONARY:
-		print("[ERROR] Failed to read known moves: JSON root is `", str(typeof(data_received)), "` instead of `TYPE_DICTIONARY`")
+		print("[ERROR] Failed to read known moves: JSON root is `", str(typeof(data_received)), "` instead of `TYPE_DICTIONARY`");
 		return;
 	
 	var dict = data_received as Dictionary;
@@ -132,17 +134,68 @@ static func load_known_moves() -> void:
 		if MoveData.verify_json(key, dict[key]):
 			known_moves[key] = MoveData.from_json(dict[key]);
 
+static func load_custom_moves() -> void:
+	var base_dir = "res://" if OS.has_feature("editor") else OS.get_executable_path().get_base_dir() + "/";
+	var filepath = base_dir + "assets/custom_moves.json";
+	
+	if not FileAccess.file_exists(filepath):
+		print("[INFO] No custom moves detected");
+		return;
+	
+	var file = FileAccess.open(filepath, FileAccess.ModeFlags.READ);
+	var json_string = file.get_as_text();
+	file.close();
+	
+	var json = JSON.new();
+	var error = json.parse(json_string);
+	
+	if error != OK:
+		print("[ERROR] Failed to read custom moves: ", json.get_error_message(), " at line ", json.get_error_line());
+		return;
+	
+	var data_received = json.data;
+	
+	if typeof(data_received) != TYPE_DICTIONARY:
+		print("[ERROR] Failed to read custom moves: JSON root is `", str(typeof(data_received)), "` instead of `TYPE_DICTIONARY`");
+		return;
+	
+	var dict = data_received as Dictionary;
+	
+	for key in dict.keys():
+		if MoveData.verify_json(key, dict[key]):
+			custom_moves[key] = MoveData.from_json(dict[key]);
+
+
+static func save_custom_moves() -> void:
+	var base_dir = "res://" if OS.has_feature("editor") else OS.get_executable_path().get_base_dir() + "/";
+	var filepath = base_dir + "assets/custom_moves.json";
+	
+	var json: Dictionary = {};
+	
+	for key in custom_moves.keys():
+		json[key] = custom_moves[key].into_json();
+	
+	var file = FileAccess.open(filepath, FileAccess.ModeFlags.WRITE);
+	file.store_string(JSON.stringify(json));
+	file.close();
+
 
 static func infer_type(move_ids: Array[String]) -> Array[AmorosType]:
 	var moves: Array[MoveData] = [];
 	
 	for move_id in move_ids:
 		if move_id != "None":
-			moves.append(known_moves[move_id]);
+			if move_id in known_moves.keys():
+				moves.append(known_moves[move_id]);
+			elif move_id in custom_moves.keys():
+				moves.append(custom_moves[move_id]);
 	
 	var type_counts: Dictionary[int, int] = {};
 	
 	for move in moves:
+		if move.type == AmorosType.None:
+			continue;
+		
 		if move.type in type_counts:
 			type_counts[move.type] += 1;
 		else:
