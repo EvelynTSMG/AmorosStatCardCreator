@@ -210,6 +210,34 @@ func add_custom_move(id: String, data: MoveData) -> void:
 	# Easier to reset then sort
 	rebuild_move_lists();
 	($EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor as CustomMoveEditor).rebuild_move_list();
+	
+	# Make sure to reload it
+	if ($Card/RightPanel/MoveSet/Move1 as Move).move_id == id:
+		select_move(
+			selected_move1,
+			($EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList/Move1),
+			($Card/RightPanel/MoveSet/Move1)
+		);
+	
+	if ($Card/RightPanel/MoveSet/Move2 as Move).move_id == id:
+		select_move(
+			selected_move2,
+			($EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList/Move2),
+			($Card/RightPanel/MoveSet/Move2)
+		);
+	
+	if ($Card/RightPanel/MoveSet/Move3 as Move).move_id == id:
+		select_move(
+			selected_move3,
+			($EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList/Move3),
+			($Card/RightPanel/MoveSet/Move3)
+		);
+	
+		select_move(
+			selected_move4,
+			($EditorUI/ScrollContainer/MarginContainer/OptionPanels/MoveSet/MoveList/Move4),
+			($Card/RightPanel/MoveSet/Move4)
+		);
 
 
 func remove_custom_move(id: String) -> void:
