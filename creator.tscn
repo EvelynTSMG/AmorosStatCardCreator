@@ -1236,7 +1236,6 @@ text = "Recommended Portrait Size: 180x180"
 horizontal_alignment = 1
 
 [node name="Types" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=362861688]
-visible = false
 layout_mode = 2
 
 [node name="Header" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Types" unique_id=136158155]
@@ -1270,7 +1269,6 @@ script = ExtResource("26_dx200")
 value_connect = "type2"
 
 [node name="Colors" type="VBoxContainer" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels" unique_id=624247687]
-visible = false
 layout_mode = 2
 
 [node name="Header" type="Label" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/Colors" unique_id=841554910]
