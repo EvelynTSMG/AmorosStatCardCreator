@@ -1615,12 +1615,13 @@ layout_mode = 2
 text = "0"
 placeholder_text = "Priority"
 
-[node name="Name" type="LineEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=1113470092]
+[node name="Name" type="TextEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=2111860645]
+custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
 placeholder_text = "Move Name"
 
 [node name="Description" type="TextEdit" parent="EditorUI/ScrollContainer/MarginContainer/OptionPanels/CustomMoveEditor" unique_id=1896015282]
-custom_minimum_size = Vector2(0, 75)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 placeholder_text = "Description"
 
